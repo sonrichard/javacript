@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detran</title>
+</head>
+<body>
+    <h1>Sistema de Multa</h1>
+    <label for="txtvel">Velocidade do Carro: </label>
+    <input type="number" name="txtvel" id="txtvel" placeholder="Em Km/h">
+    <input type="button" value="Verificar" onclick="calcular()">
+    <div id="res"></div>
+
+    <h1>Sistema de Pais</h1>
+    <label for="txt2">Digite seu pais</label>
+    <input type="text" name="txt2" id="txt2">
+    <input type="button" value="verificar" onclick="verificar()">
+    <div id="resp"></div>
+
+    <script>
+       
+        function calcular(){
+            var txtv = document.getElementById('txtvel')
+            var res = document.getElementById('res')
+
+            var vel = Number(txtv.value)
+            res.innerHTML = `<p>Sua velocidade atual é de ${vel}km/h</p>`
+
+            if (vel > 60) {
+                res.innerHTML += `<p>Sua velocidade de ${vel}km/h ultrapasa os limintes de velocidade, Vc esta Multado!</p>`
+            } else {
+                res.innerHTML += `<p>Continue dirijindo com cuidado</p>`
+            }
+
+            res.innerHTML += `<p>Dirija sempre com cinto de segurança</p>`
+        }
+
+        function verificar(){
+            var b = document.
+            getElementById('txt2')
+            var resp = document.getElementById('resp')
+            if (b == 'Brasil') {
+                resp.innerHTML = `<p>Meu parabens vc é foda</p>`
+            } else {
+                resp.innerHTML = `<p>Mais um cara comum bem vindo<p/>`
+            }
+        }
+    </script>
+</body>
+</html>
